@@ -1,5 +1,6 @@
 package TomekD.model;
 
+import TomekD.api.UserDto;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
@@ -12,13 +13,13 @@ public class User extends BaseEntity {
         USER, ADMIN
     }
 
-//    public User(UserDto userDto) {
-//        id = userDto.getId();
-//        email = userDto.getEmail();
-//        firstName = userDto.getFirstName();
-//        lastName = userDto.getLastName();
-//        password = "1234";
-//    }
+    public User(UserDto userDto) {
+        id = userDto.getId();
+        email = userDto.getEmail();
+        firstName = userDto.getFirstName();
+        lastName = userDto.getLastName();
+        password = "1234";
+    }
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
